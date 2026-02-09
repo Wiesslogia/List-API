@@ -1,5 +1,5 @@
 import express from "express";
-// import router from "./routers/user.routes.js";
+import router from "./routes/product.route.js";
 import dotenv from "dotenv"
 import connectDB from "./config/db.js"
 
@@ -11,11 +11,11 @@ connectDB();
 
 app.use(express.json());
 
-app.get("/",(req,res)=>{
-    res.send("User Management API is running");
-})
+// app.get("/",(req,res)=>{
+//     res.send("List API is running");
+// })
 
 
-// app.use("/api/users", router);
+app.use("/api", router);
 
 export default app;
